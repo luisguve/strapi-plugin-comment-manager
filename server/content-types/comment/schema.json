@@ -20,14 +20,20 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
-    "related_to": {
-      "type": "string"
-    },
     "subcomments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::comment-manager.subcomment",
       "mappedBy": "parent_comment"
+    },
+    "from_admin": {
+      "type": "boolean"
+    },
+    "related_to": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::comment-manager.content-id",
+      "inversedBy": "comments"
     }
   }
 }

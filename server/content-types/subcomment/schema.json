@@ -4,7 +4,8 @@
   "info": {
     "singularName": "subcomment",
     "pluralName": "subcomments",
-    "displayName": "Subcomment"
+    "displayName": "Subcomment",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false,
@@ -24,6 +25,9 @@
       "relation": "manyToOne",
       "target": "plugin::comment-manager.comment",
       "inversedBy": "subcomments"
+    },
+    "from_admin": {
+      "type": "boolean"
     }
   }
 }

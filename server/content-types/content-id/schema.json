@@ -1,15 +1,25 @@
-
 {
   "kind": "collectionType",
   "collectionName": "content_ids",
   "info": {
     "singularName": "content-id",
     "pluralName": "content-ids",
-    "displayName": "ContentID"
+    "displayName": "ContentID",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false,
     "comment": ""
   },
-  "attributes": {}
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::comment-manager.comment",
+      "mappedBy": "related_to"
+    }
+  }
 }
