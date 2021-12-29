@@ -1,0 +1,15 @@
+
+{
+  "kind": "collectionType",
+  "collectionName": "content_ids",
+  "info": {
+    "singularName": "content-id",
+    "pluralName": "content-ids",
+    "displayName": "ContentID"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {}
+}

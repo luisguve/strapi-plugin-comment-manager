@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subcomments",
+  "info": {
+    "singularName": "subcomment",
+    "pluralName": "subcomments",
+    "displayName": "Subcomment"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "parent_comment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::comment-manager.comment",
+      "inversedBy": "subcomments"
+    }
+  }
+}
