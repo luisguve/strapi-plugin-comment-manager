@@ -24,11 +24,11 @@ In your Strapi admin panel, head over to `Settings`, then over to `Roles` under 
 
 Let's first setup the Public API; click on `Public` and hit the dropdown button of `Comment Manager`. Now check `count`, `find` and `getPageSize`, then hit the Save button. Below is a picture of a proper configuration:
 
-![Public API permissions](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/public-api.PNG)
+![Public API permissions](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/public-api.png)
 
 Now let's setup the Authenticated API. Go back to `Roles` and click on `Authenticated`. Open the dropdown of `Comment Manager` and mark as checked the option `create` on both Comment and Subcomment. Below is a picture of a proper configuration:
 
-![Authenticated API permissions](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/authenticated-api.PNG)
+![Authenticated API permissions](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/authenticated-api.png)
 
 With this configuration, the frontend should now be able to make requests to get and post comments.
 
@@ -168,9 +168,9 @@ Once you've got the plugin up an running and users start to post comments, you c
 
 Here you can see two tabs: one for the latest comments and one for comments grouped by content ID.
 
-![Latest comments tab](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/latest-comments.PNG)
+![Latest comments tab](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/latest-comments.png)
 
-![Comments grouped by content ID tab](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/grouped-comments.PNG)
+![Comments grouped by content ID tab](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/grouped-comments.png)
 
 In both of them you can delete comments and subcomments as well as leave replies.
 
