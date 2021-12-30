@@ -80,8 +80,11 @@ The following endpoints are exposed to fetch and post comments and subcomments:
 ### Get comments for a content ID
 
 **Method**: GET
+
 **Path**: /api/comments/:slug
+
 **Optional query parameters**: start, ignoreCount
+
 **Returns**:
 
     {
@@ -97,7 +100,9 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 How many comments are associated with the given slug
 
 **Method**: GET
+
 **Path**: /api/comment-manager/comments/:slug/count
+
 **Returns**:
 
     {
@@ -109,8 +114,11 @@ How many comments are associated with the given slug
 Posting a top-level comment associated with the given slug
 
 **Method**: POST
+
 **Path**: /api/comment-manager/comments/:slug
+
 **Authentication**: Bearer token
+
 **Payload**:
 
     {
@@ -128,8 +136,11 @@ Posting a top-level comment associated with the given slug
 Replying to a comment
 
 **Method**: POST
+
 **Path**: /api/comment-manager/subcomments/:parent-id
+
 **Authentication**: Bearer token
+
 **Payload**:
 
     {
@@ -147,7 +158,9 @@ Replying to a comment
 Get how many comments are returned at once for pagination purposes.
 
 **Method**: GET
+
 **Path**: /api/comment-manager/page-size
+
 **Returns**:
 
     {
