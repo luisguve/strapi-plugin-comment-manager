@@ -6,47 +6,30 @@ Enable and manage comments for your content very easily!
 
 You should have installed an instance of Strapi v4.x.x
 
-This plugin does not work on versions of Strapi prior to v4.0.0
-
 ## Installation
 
 Run the following command in your project root:
 
     npm install strapi-plugin-comment-manager
 
-And that's it! If everything runs correctly, the plugin should be installed.
-
 ## Configurarion
 
-Now you need to enable some permissions so that the frontend can access the endpoints to post and fetch comments.
+For your frontend to have access to the API, enable the following permissions for **Comment Manager** from **Users & Permissions Plugin** on your project settings:
 
-In your Strapi admin panel, head over to `Settings`, then over to `Roles` under `Users & Permissions Plugin`.
+For public, enable: **count**, **find** and **getPageSize**.
 
-Let's first setup the Public API; click on `Public` and hit the dropdown button of `Comment Manager`. Now check `count`, `find` and `getPageSize`, then hit the Save button. Below is a picture of a proper configuration:
-
-![Public API permissions](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/public-api.png)
-
-Now let's setup the Authenticated API. Go back to `Roles` and click on `Authenticated`. Open the dropdown of `Comment Manager` and mark as checked the option `create` on both Comment and Subcomment. Below is a picture of a proper configuration:
-
-![Authenticated API permissions](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/authenticated-api.png)
-
-With this configuration, the frontend should now be able to make requests to get and post comments.
+For authenticated, enable **create** on both Comment and Subcomment.
 
 ## Display comments on the frontend
 
-The plugin exposes an API to get and post comments if you want to have fine-grained control over the workflow of your comments system, but this plugin also comes with a purpose-built React component library that makes super easy to get up and running without getting your hands dirty.
+Comments can be displayed in the frontend in two ways:
 
-This component library is called [strapi-comments-client](https://npmjs.com/package/strapi-comments-client), is built using full typescript and it actually handles all of the complexity of fetching and posting comments and subcomments for every content ID that you pass to it.
+1. Using the React components library [strapi-comments-client](https://npmjs.com/package/strapi-comments-client) **(recommended)**
+2. Build your custom frontend using the API
 
-For instruction on how to install this library and display comments in your React application, see the [README](https://npmjs.com/package/strapi-comments-client) on the package page, and for a full working example of a project using this library, see [this repo](https://github.com/luisguve/strapi-comments-client-example).
+## API
 
-If you use this library, this is how the UI will look like. Notice that the library is using the UI components from the [Strapi Design System](https://design-system.strapi.io) introduced in V4.
-
-![Sample UI](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/post.PNG)
-
-## REST API
-
-First of all, there are some Typescript interfaces that will help to get an idea of the data structures.
+There are some Typescript interfaces that will help to get an idea of the data structures.
 
 ### Comments:
     interface IComment {
@@ -81,7 +64,7 @@ The following endpoints are exposed to fetch and post comments and subcomments:
 
 **Method**: GET
 
-**Path**: /api/comments/:slug
+**Path**: /api/comment-manager/comments/:slug
 
 **Optional query parameters**: start, ignoreCount
 
@@ -93,11 +76,12 @@ The following endpoints are exposed to fetch and post comments and subcomments:
     }
 
 The parameter `start` indicates how many comments to skip. This is for pagination purposes.
-The parameter `ignoreCount` indicates whether or not to return the total number of comments a given content slug has.
+
+The parameter `ignoreCount` indicates whether or not to return the total number of comments associated with the given slug.
+
+---
 
 ### Get the number of comments associated with a given content ID
-
-How many comments are associated with the given slug
 
 **Method**: GET
 
@@ -110,8 +94,6 @@ How many comments are associated with the given slug
     }
 
 ### Post a comment
-
-Posting a top-level comment associated with the given slug
 
 **Method**: POST
 
@@ -133,8 +115,6 @@ Posting a top-level comment associated with the given slug
 
 ### Post a subcomment
 
-Replying to a comment
-
 **Method**: POST
 
 **Path**: /api/comment-manager/subcomments/:parent-id
@@ -155,8 +135,6 @@ Replying to a comment
 
 ### Get the page size
 
-Get how many comments are returned at once for pagination purposes.
-
 **Method**: GET
 
 **Path**: /api/comment-manager/page-size
@@ -169,24 +147,16 @@ Get how many comments are returned at once for pagination purposes.
 
 ## General settings
 
-You can customize the page size, i.e. specify how many comments are returned at once.
+The plugin allows to set how many comments are returned per page by going to the **Pagination** section under **Comment Manager Plugin** on the **Settings** section.
 
-In the Strapi admin panel, head over to `Settings`, then select `Pagination` under `Comment Manager Plugin`.
+The default page size is 10.
 
-Here you'll find an input to set the page size, which defaults to 10.
+## Management of comments
 
-## Manage comments
+Admin users are able to delete comments and subcomments as well as leave replies as admins from within the plugin page of the Strapi admin dashboard.
 
-Once you've got the plugin up an running and users start to post comments, you can manage and reply to comments as admin from the Content Manager section of the left sidebar in the Strapi admin panel.
-
-Here you can see two tabs: one for the latest comments and one for comments grouped by content ID.
-
-![Latest comments tab](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/latest-comments.png)
-
-![Comments grouped by content ID tab](https://raw.githubusercontent.com/luisguve/strapi-plugin-comment-manager/main/grouped-comments.png)
-
-In both of them you can delete comments and subcomments as well as leave replies.
+The plugin interface has two tabs: one for the latest comments and one for comments by content ID.
 
 ## Roadmap and future plans
 
-The features are pretty basic at the moment but if there's interest, I'm willing to work on more features as well as improvements in the UI/UX.
+The plugin is pretty basic but it can be improved with more features and a better UI/UX. Collaborations are very welcome.
