@@ -18,22 +18,26 @@
     "author": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "configurable": false
     },
     "subcomments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::comment-manager.subcomment",
-      "mappedBy": "parent_comment"
+      "mappedBy": "parent_comment",
+      "configurable": false
     },
     "from_admin": {
-      "type": "boolean"
+      "type": "boolean",
+      "configurable": false
     },
     "related_to": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::comment-manager.content-id",
-      "inversedBy": "comments"
+      "inversedBy": "comments",
+      "configurable": false
     }
   }
 }

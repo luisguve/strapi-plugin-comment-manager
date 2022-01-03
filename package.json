@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-comment-manager",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "keywords": ["strapi", "strapi-plugin", "comments", "api", "backend"],
   "description": "Strapi plugin to enable and manage comments for your content",
   "strapi": {

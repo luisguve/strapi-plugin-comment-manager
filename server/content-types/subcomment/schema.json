@@ -13,21 +13,25 @@
   },
   "attributes": {
     "content": {
-      "type": "text"
+      "type": "text",
+      "configurable": false
     },
     "author": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "configurable": false
     },
     "parent_comment": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::comment-manager.comment",
-      "inversedBy": "subcomments"
+      "inversedBy": "subcomments",
+      "configurable": false
     },
     "from_admin": {
-      "type": "boolean"
+      "type": "boolean",
+      "configurable": false
     }
   }
 }

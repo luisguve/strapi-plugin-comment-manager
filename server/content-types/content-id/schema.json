@@ -13,13 +13,16 @@
   },
   "attributes": {
     "slug": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "configurable": false
     },
     "comments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::comment-manager.comment",
-      "mappedBy": "related_to"
+      "mappedBy": "related_to",
+      "configurable": false
     }
   }
 }
