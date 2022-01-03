@@ -13,7 +13,8 @@
   },
   "attributes": {
     "content": {
-      "type": "text"
+      "type": "text",
+      "configurable": false
     },
     "author": {
       "type": "relation",
