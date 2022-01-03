@@ -1,4 +1,5 @@
 {
+  "plugin.name": "Comment Manager",
   "Settings.section-label": "Comment Manager plugin",
   "Settings.pagination": "Pagination"
 }

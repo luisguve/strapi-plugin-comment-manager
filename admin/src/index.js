@@ -13,8 +13,8 @@ export default {
       to: `/plugins/${pluginId}`,
       icon: PluginIcon,
       intlLabel: {
-        id: `${pluginId}.plugin.name`,
-        defaultMessage: name,
+        id: getTrad("plugin.name"),
+        defaultMessage: "Comment Manager",
       },
       Component: async () => {
         const component = await import(/* webpackChunkName: "[request]" */ './pages/App');
