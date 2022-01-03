@@ -4,7 +4,8 @@
   "keywords": ["strapi", "strapi-plugin", "comments", "api", "backend"],
   "description": "Strapi plugin to enable and manage comments for your content",
   "strapi": {
-    "name": "Comment Manager",
+    "displayName": "Comment Manager",
+    "name": "comment-manager",
     "description": "Enable and manage comments for your content",
     "kind": "plugin"
   },
