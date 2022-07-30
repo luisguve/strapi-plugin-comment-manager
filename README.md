@@ -10,7 +10,7 @@ You should have installed an instance of Strapi v4.x.x
 
 Run the following command in your project root:
 
-    npm install strapi-plugin-comment-manager
+    npm install @coolstrapiplugins/strapi-plugin-comment-manager
 
 ## Configurarion
 
@@ -24,7 +24,7 @@ For authenticated, enable **create** on both Comment and Subcomment.
 
 Comments can be displayed in the frontend in two ways:
 
-1. Using the React components library [strapi-comments-client](https://npmjs.com/package/strapi-comments-client) **(recommended)**
+1. Using the React components library [strapi-comments-client](https://npmjs.com/package/@coolstrapiplugins/strapi-comments-client) **(recommended)**
 2. Build your custom frontend using the API
 
 ## API
@@ -157,6 +157,6 @@ Admin users are able to delete comments and subcomments as well as leave replies
 
 The plugin interface has two tabs: one for the latest comments and one for comments by content ID.
 
-## Roadmap and future plans
+## Submitting issues
 
-The plugin is pretty basic but it can be improved with more features and a better UI/UX. Collaborations are very welcome.
+Issues are submitted to https://github.com/coolstrapiplugins/strapi-plugin-comment-manager/issues. Please provide as much information as possible about the bug or feature request.
