@@ -1,7 +1,13 @@
 {
-  "name": "@coolstrapiplugins/strapi-plugin-comment-manager",
-  "version": "1.0.12",
-  "keywords": ["strapi", "strapi-plugin", "comments", "api", "backend"],
+  "name": "strapi-plugin-comment-manager",
+  "version": "1.0.13",
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "comments",
+    "api",
+    "backend"
+  ],
   "description": "Strapi plugin to enable and manage comments for your content",
   "strapi": {
     "displayName": "Comment Manager",
@@ -32,6 +38,6 @@
     "npm": ">=6.0.0"
   },
   "license": "MIT",
-  "repository": "https://github.com/coolstrapiplugins/strapi-plugin-comment-manager",
-  "homepage": "https://coolstrapiplugins.github.io/plugins/strapi-plugin-comment-manager/"
+  "repository": "https://github.com/luisguve/strapi-plugin-comment-manager",
+  "homepage": "https://luisguveworks.github.io/plugins/strapi-plugin-comment-manager/"
 }
