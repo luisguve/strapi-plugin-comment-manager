@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-comment-manager",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "keywords": [
     "strapi",
     "strapi-plugin",
@@ -22,6 +22,9 @@
     "immer": "^9.0.6",
     "qs": "^6.10.1",
     "react-select": "^4.0.2"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.0.0"
   },
   "author": {
     "name": "Luis G. Villegas",
