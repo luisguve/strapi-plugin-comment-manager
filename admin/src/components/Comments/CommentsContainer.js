@@ -48,7 +48,7 @@ const CommentsContainer = ({data, actionDelete, actionAdd}) => {
       {
         (!data.comments || !data.comments.length) ?
           <Typography variant="beta">There are no comments yet</Typography>
-        : (
+        : comments && (
           <Stack size={2}>
             <Typography variant="beta">
               Viewing {data.comments.length} of {data.commentsCount} comments
