@@ -13,7 +13,7 @@ const FormComment = (props) => {
     if (!content) {
       return
     }
-    const url = `comment-manager/comments/${contentID}`
+    const url = `/comment-manager/comments/${contentID}`
     setSending(true)
     try {
       const res = await axios.post(url, JSON.stringify({ content }))
@@ -57,3 +57,5 @@ const FormComment = (props) => {
     </form>
   )
 }
+
+export default FormComment

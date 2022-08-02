@@ -18,7 +18,7 @@ const Reply = ({data, actionDelete}) => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false)
   const [deleting, setDeleting] = useState(false)
   const handleDelete = async () => {
-    const url = `comment-manager/subcomments/${data.id}`
+    const url = `/comment-manager/subcomments/${data.id}`
     setDeleting(true)
     try {
       const res = await axios.delete(url)
@@ -116,7 +116,7 @@ const Comment = ({ data, collapseReplies, showDeleteButton, actionDelete }) => {
     setShowFormReply(prev => !prev)
   }
   const handleDelete = async () => {
-    const url = `comment-manager/comments/${data.id}`
+    const url = `/comment-manager/comments/${data.id}`
     setDeleting(true)
     try {
       const res = await axios.delete(url)
@@ -224,7 +224,7 @@ const FormReply = ({ commentID, addReply, closeForm }) => {
     if (!content) {
       return
     }
-    const url = `comment-manager/subcomments/${commentID}`
+    const url = `/comment-manager/subcomments/${commentID}`
     setSending(true)
     try {
       const res = await axios.post(url, JSON.stringify({content}))

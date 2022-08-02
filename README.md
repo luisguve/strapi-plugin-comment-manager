@@ -10,7 +10,9 @@ You should have installed an instance of Strapi v4.x.x
 
 Run the following command in your project root:
 
-    npm install strapi-plugin-comment-manager
+```bash
+npm install strapi-plugin-comment-manager
+```
 
 ## Configurarion
 
@@ -32,31 +34,39 @@ Comments can be displayed in the frontend in two ways:
 There are some Typescript interfaces that will help to get an idea of the data structures.
 
 ### Comments:
-    interface IComment {
-      id: string,
-      from_admin: boolean,
-      createdAt: string,
-      content: string,
-      author: IAuthor | null,
-      subcomments?: ISubcomment[]
-    }
+
+```ts
+interface IComment {
+  id: string;
+  from_admin: boolean;
+  createdAt: string;
+  content: string;
+  author: IAuthor | null;
+  subcomments?: ISubcomment[];
+}
+```
 
 ### Subcomments:
-    interface ISubcomment {
-      id: string,
-      from_admin: boolean,
-      createdAt: string,
-      content: string,
-      author: IAuthor | null,
-    }
+
+```ts
+interface ISubcomment {
+  id: string;
+  from_admin: boolean;
+  createdAt: string;
+  content: string;
+  author: IAuthor | null;
+}
+```
 
 ### Authors:
-    IAuthor {
-      username: string,
-      email: string,
-      id: string
-    }
 
+```ts
+interface IAuthor {
+  username: string;
+  email: string;
+  id: string;
+}
+```
 
 The following endpoints are exposed to fetch and post comments and subcomments:
 
@@ -70,10 +80,12 @@ The following endpoints are exposed to fetch and post comments and subcomments:
 
 **Returns**:
 
-    {
-      commentsCount?: Number,
-      comments: IComment[]
-    }
+```ts
+{
+  commentsCount?: Number;
+  comments: IComment[];
+}
+```
 
 The parameter `start` indicates how many comments to skip. This is for pagination purposes.
 
@@ -89,9 +101,11 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 **Returns**:
 
-    {
-      count: Number
-    }
+```ts
+{
+  count: Number;
+}
+```
 
 ### Post a comment
 
@@ -103,15 +117,19 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 **Payload**:
 
-    {
-      content: string
-    }
+```ts
+{
+  content: string;
+}
+```
 
 **Returns**:
 
-    {
-      id: Number
-    }
+```ts
+{
+  id: Number;
+}
+```
 
 ### Post a subcomment
 
@@ -123,15 +141,19 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 **Payload**:
 
-    {
-      content: string
-    }
+```ts
+{
+  content: string;
+}
+```
 
 **Returns**:
 
-    {
-      id: Number
-    }
+```ts
+{
+  id: Number;
+}
+```
 
 ### Get the page size
 
@@ -141,9 +163,11 @@ The parameter `ignoreCount` indicates whether or not to return the total number 
 
 **Returns**:
 
-    {
-      pageSize: Number
-    }
+```ts
+{
+  pageSize: Number;
+}
+```
 
 ## General settings
 
@@ -160,3 +184,7 @@ The plugin interface has two tabs: one for the latest comments and one for comme
 ## Submitting issues
 
 Issues are submitted to [https://github.com/luisguve/strapi-plugin-comment-manager/issues](https://github.com/luisguve/strapi-plugin-comment-manager/issues). Please provide as much information as possible about the bug or feature request.
+
+## Tutorial
+
+For more detailed instructions on how to install, configure & use this plugin, check out [this post](https://luisguve.github.io/tutorials/how-to-enable-and-manage-comments-in-your-strapi-application/).

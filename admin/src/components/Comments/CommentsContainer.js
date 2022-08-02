@@ -98,7 +98,7 @@ const CommentModal = ({data, close, actionDelete}) => {
   const [deleteModal, setDeleteModal] = useState(false)
   const toggleDelModal = () => setDeleteModal(prev => !prev)
   const handleDelete = async () => {
-    const url = `comment-manager/comments/${data.id}`
+    const url = `/comment-manager/comments/${data.id}`
     setDeleting(true)
     try {
       const res = await axios.delete(url)
