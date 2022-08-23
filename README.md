@@ -2,6 +2,8 @@
 
 Enable and manage comments for your content very easily!
 
+## [Video tutorial](https://youtu.be/sD3oV6qNgPI)
+
 ## Requirements
 
 You should have installed an instance of Strapi v4.x.x
